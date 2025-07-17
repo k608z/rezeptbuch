@@ -18,126 +18,6 @@ async function ladeRezepte() {
     }
 }
 
-// Rezept-Daten
-/*
-let rezepte = [
-    {
-        id: 1,
-        name: "Spaghetti Carbonara",
-        bild_url: "https://images.unsplash.com/photo-1588013273468-315fd88ea34c?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D4",
-        zutaten: [
-            "200g Spaghetti",
-            "100g Pancetta oder Guanciale",
-            "2 Eigelb",
-            "50g Parmesan, gerieben",
-            "Schwarzer Pfeffer",
-            "Salz"
-        ],
-        anleitung: "1. Nudeln in reichlich Salzwasser al dente kochen. 2. Pancetta in einer Pfanne knusprig anbraten. 3. Eigelb mit Parmesan und Pfeffer verquirlen. 4. Heiße Nudeln zur Pancetta geben, vom Herd nehmen und die Ei-Käse-Mischung unterrühren. 5. Mit Pasta-Wasser cremig rühren und sofort servieren.",
-        schwierigkeit: "Mittel",
-        zubereitungszeit: "20 Min",
-        portionen: "2 Personen"
-    },
-    {
-        id: 2,
-        name: "Fluffige Pfannkuchen",
-        bild_url: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?q=80&w=2070",
-        zutaten: [
-            "250g Mehl",
-            "2 Eier",
-            "500ml Milch",
-            "1 Prise Salz",
-            "2 EL Zucker",
-            "1 TL Backpulver",
-            "Butter zum Braten"
-        ],
-        anleitung: "1. Alle trockenen Zutaten in einer Schüssel vermengen. 2. Eier und Milch verquirlen und zu den trockenen Zutaten geben. 3. Zu einem glatten Teig verrühren und 10 Minuten ruhen lassen. 4. Butter in einer Pfanne erhitzen und Pfannkuchen portionsweise goldbraun backen.",
-        schwierigkeit: "Einfach",
-        zubereitungszeit: "15 Min",
-        portionen: "4 Personen"
-    },
-    {
-        id: 3,
-        name: "Chicken Tikka Masala",
-        bild_url: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=2071",
-        zutaten: [
-            "500g Hühnchenbrust",
-            "200ml Joghurt",
-            "400ml Kokosmilch",
-            "200g Tomaten, passiert",
-            "1 Zwiebel",
-            "3 Knoblauchzehen",
-            "2 TL Garam Masala",
-            "1 TL Kurkuma",
-            "1 TL Paprika",
-            "Salz und Pfeffer"
-        ],
-        anleitung: "1. Hähnchen in Joghurt und Gewürzen marinieren (mindestens 30 Min). 2. Zwiebel und Knoblauch anbraten. 3. Mariniertes Hähnchen anbraten. 4. Tomaten und Kokosmilch hinzufügen, 20 Min köcheln lassen. 5. Mit Reis und Naan servieren.",
-        schwierigkeit: "Mittel",
-        zubereitungszeit: "45 Min",
-        portionen: "3 Personen"
-    },
-    {
-        id: 4,
-        name: "Caesar Salad",
-        bild_url: "https://images.unsplash.com/photo-1546793665-c74683f339c1?q=80&w=2070",
-        zutaten: [
-            "1 Romana Salat",
-            "100g Parmesan",
-            "2 Scheiben Toastbrot",
-            "2 Knoblauchzehen",
-            "4 EL Olivenöl",
-            "1 Eigelb",
-            "1 EL Dijon-Senf",
-            "2 EL Zitronensaft",
-            "4 Sardellen"
-        ],
-        anleitung: "1. Croutons aus Toastbrot rösten. 2. Für das Dressing Eigelb, Senf, Zitronensaft und Sardellen vermixen. 3. Langsam Olivenöl einrühren. 4. Salat waschen und zerteilen. 5. Mit Dressing, Croutons und Parmesan servieren.",
-        schwierigkeit: "Einfach",
-        zubereitungszeit: "15 Min",
-        portionen: "2 Personen"
-    },
-    {
-        id: 5,
-        name: "Schokoladen-Lava-Kuchen",
-        bild_url: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=2070",
-        zutaten: [
-            "100g dunkle Schokolade",
-            "50g Butter",
-            "1 Ei",
-            "1 Eigelb",
-            "2 EL Zucker",
-            "2 EL Mehl",
-            "1 Prise Salz",
-            "Butter für die Förmchen"
-        ],
-        anleitung: "1. Schokolade und Butter schmelzen. 2. Ei, Eigelb und Zucker schaumig rühren. 3. Schokolade unterrühren, dann Mehl und Salz. 4. In gefettete Förmchen füllen. 5. 12-14 Min bei 200°C backen. 6. Sofort stürzen und servieren.",
-        schwierigkeit: "Mittel",
-        zubereitungszeit: "25 Min",
-        portionen: "2 Personen"
-    },
-    {
-        id: 6,
-        name: "Vegetarische Lasagne",
-        bild_url: "https://images.unsplash.com/photo-1574894709920-11b28e7367e3?q=80&w=2070",
-        zutaten: [
-            "9 Lasagneplatten",
-            "2 Zucchini",
-            "1 Aubergine",
-            "500g Ricotta",
-            "400g Mozzarella",
-            "100g Parmesan",
-            "500ml Tomatensauce",
-            "2 Knoblauchzehen",
-            "Basilikum, Oregano"
-        ],
-        anleitung: "1. Gemüse in Scheiben schneiden und anbraten. 2. Ricotta mit Kräutern würzen. 3. Lasagneplatten, Gemüse, Ricotta und Sauce schichten. 4. Mit Mozzarella und Parmesan bestreuen. 5. 35 Min bei 180°C backen.",
-        schwierigkeit: "Mittel",
-        zubereitungszeit: "60 Min",
-        portionen: "6 Personen"
-    }
-];
-*/
 // Schwierigkeitsgrad-Farben
 function getSchwierigkeitsFarbe(schwierigkeit) {
     switch(schwierigkeit) {
@@ -246,6 +126,55 @@ async function loescheRezept(id) {
     }
 }
 
+// Formular-Element holen
+const rezeptForm = document.getElementById("rezept-form");
+
+// Event Listener fürs Abschicken
+rezeptForm.addEventListener("submit", async function (e) {
+  e.preventDefault(); // Seite soll nicht neuladen
+
+  // Werte auslesen
+  const name = document.getElementById("name").value.trim();
+  const bild = document.getElementById("bild").value.trim();
+  const zutatenText = document.getElementById("zutaten").value.trim();
+  const anleitung = document.getElementById("anleitung").value.trim();
+  const dauer = document.getElementById("dauer").value.trim();
+  const personen = document.getElementById("personen").value.trim();
+  const schwierigkeit = document.getElementById("schwierigkeit").value.trim();
+
+  // Zutaten in Array umwandeln (eine pro Zeile)
+  const zutaten = zutatenText.split("\n").map(z => z.trim()).filter(z => z !== "");
+
+  // Rezept-Objekt bauen
+  const neuesRezept = {
+    name,
+    bild_url: bild,
+    zutaten,
+    anleitung,
+    zubereitungszeit: dauer + " Min",
+    portionen: personen + " Personen",
+    schwierigkeit
+  };
+
+  try {
+    const res = await fetch("http://localhost:3000/api/rezepte", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(neuesRezept)
+    });
+
+    if (res.ok) {
+      alert("🎉 Rezept erfolgreich hinzugefügt!");
+      rezeptForm.reset(); // Formular leeren
+      renderRezepte(); // Galerie neu laden
+    } else {
+      alert("❌ Fehler beim Hinzufügen des Rezepts.");
+    }
+  } catch (err) {
+    console.error("Fehler beim Senden:", err);
+    alert("Verbindung zum Server fehlgeschlagen.");
+  }
+});
 
 document.addEventListener('DOMContentLoaded', ladeRezepte);
 

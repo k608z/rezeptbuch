@@ -19,24 +19,48 @@
                 <section class="mb-5">
         <h2>📋 Neues Rezept hinzufügen</h2>
         <form id="rezept-form">
-            <div class="mb-3">
-                <label for="name" class="form-label">Rezeptname</label>
-                <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-                <label for="bild" class="form-label">Bild-URL</label>
-                <input type="url" class="form-control" id="bild" required>
-            </div>
-            <div class="mb-3">
-                <label for="zutaten" class="form-label">Zutaten (eine pro Zeile)</label>
-                <textarea class="form-control" id="zutaten" rows="4" required></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="anleitung" class="form-label">Anleitung</label>
-                <textarea class="form-control" id="anleitung" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-success">Rezept hinzufügen</button>
-        </form>
+    <div class="mb-3">
+        <label for="name" class="form-label">Rezeptname</label>
+        <input type="text" class="form-control" id="name" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="bild" class="form-label">Bild-URL</label>
+        <input type="url" class="form-control" id="bild" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="dauer" class="form-label">Zubereitungszeit (Minuten)</label>
+        <input type="number" class="form-control" id="dauer" min="1" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="personen" class="form-label">Personenzahl</label>
+        <input type="number" class="form-control" id="personen" min="1" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="schwierigkeit" class="form-label">Schwierigkeitsgrad</label>
+        <select class="form-select" id="schwierigkeit" required>
+            <option value="" selected disabled>Bitte wählen</option>
+            <option value="Einfach">Einfach</option>
+            <option value="Mittel">Mittel</option>
+            <option value="Schwierig">Schwierig</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="zutaten" class="form-label">Zutaten (eine pro Zeile)</label>
+        <textarea class="form-control" id="zutaten" rows="4" required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="anleitung" class="form-label">Anleitung</label>
+        <textarea class="form-control" id="anleitung" rows="4" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Rezept hinzufügen</button>
+</form>
     </section>
             <div id="rezept-galerie" class="row">
                 <!-- Die Rezept-Karten werden hier dynamisch eingefügt -->

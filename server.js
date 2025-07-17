@@ -136,11 +136,20 @@ app.get('/api/rezepte', (req, res) => {
     res.json(rezepte);
 });
 
+app.post('/api/rezepte', (req, res) => {
+    const neuesRezept = req.body;
+    neuesRezept.id = Date.now(); // einfache ID erzeugen
+    rezepte.push(neuesRezept);
+    res.status(201).json(neuesRezept); // als Bestätigung zurücksenden
+});
+
 app.delete('/api/rezepte/:id', (req, res) => {
     const id = parseInt(req.params.id);
     rezepte = rezepte.filter(rezept => rezept.id !== id);
     res.status(204).send(); // Kein Inhalt zurück, aber erfolgreich
 });
+
+
 
 
 // Server starten
